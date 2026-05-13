@@ -188,7 +188,7 @@ else
         export JEMALLOC_LIB="/usr/lib/x86_64-linux-gnu/libjemalloc_pic.a"
 
         # Linux Dependencies    
-        # sudo apt-get install libsnappy-dev libbz2-dev libz-dev liblz4-dev libzstd-dev
+        sudo apt-get install libsnappy-dev libbz2-dev libz-dev liblz4-dev libzstd-dev
         # Linux dependencies must be now installed in the docker image located here: 
         # https://github.com/theolivenbaum/rocksdb-docker-linux/blob/main/Dockerfile
 

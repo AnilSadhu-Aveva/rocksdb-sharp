@@ -26,8 +26,9 @@ steps:
   inputs:
     command: 'publish'
     feed: 'Cloud-Platform'
-    packageName: 'rocksdb-native-linux-X64'
-    packageVersion: '$(ROCKSDBVERSION)'
+    packageName: 'rocksdb-native-linux-x64'
+    packageVersion: '10.1.1'
+    versionIncrement: 'patch'
     directory: '$(Build.SourcesDirectory)/build-native/runtimes/linux-x64/native'
 
 # - task: AzureCLI@1

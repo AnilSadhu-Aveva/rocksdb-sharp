@@ -71,19 +71,19 @@ steps:
     workingDirectory: '$(Build.SourcesDirectory)/build-codegen/'
     
     
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'Curiosity GmbH Azure'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az storage blob download -f $(Build.SourcesDirectory)/csharp/runtimes/win-x64/native/rocksdb.dll --account-name curiosityreleases  -c rocksdb  -n rocksdb-v$(ROCKSDBVERSIONBASE).dll'
+# - task: AzureCLI@2
+#   inputs:
+#     azureSubscription: 'Curiosity GmbH Azure'
+#     scriptType: 'bash'
+#     scriptLocation: 'inlineScript'
+#     inlineScript: 'az storage blob download -f $(Build.SourcesDirectory)/csharp/runtimes/win-x64/native/rocksdb.dll --account-name curiosityreleases  -c rocksdb  -n rocksdb-v$(ROCKSDBVERSIONBASE).dll'
 
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'Curiosity GmbH Azure'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az storage blob download -f $(Build.SourcesDirectory)/csharp/runtimes/linux-x64/native/librocksdb-jemalloc.so --account-name curiosityreleases  -c rocksdb  -n librocksdb-v$(ROCKSDBVERSIONBASE).so'
+# - task: AzureCLI@2
+#   inputs:
+#     azureSubscription: 'Curiosity GmbH Azure'
+#     scriptType: 'bash'
+#     scriptLocation: 'inlineScript'
+#     inlineScript: 'az storage blob download -f $(Build.SourcesDirectory)/csharp/runtimes/linux-x64/native/librocksdb-jemalloc.so --account-name curiosityreleases  -c rocksdb  -n librocksdb-v$(ROCKSDBVERSIONBASE).so'
 
 # - task: AzureCLI@2
 #   inputs:

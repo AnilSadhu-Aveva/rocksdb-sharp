@@ -22,13 +22,6 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'ls $(Build.SourcesDirectory) -hR'
-- task: UniversalPackages@1
-  inputs:
-    command: 'publish'
-    feed: 'Cloud-Platform'
-    packageName: 'rocksdb-native-linux-X64'
-    packageVersion: '$(ROCKSDBVERSION)'
-    directory: '$(Build.SourcesDirectory)/build-native/runtimes/linux-x64/native'
 
 # - task: AzureCLI@1
 #   inputs:

@@ -156,7 +156,7 @@ steps:
 # - task: NuGetCommand@2
 #   inputs:
 #     command: 'push'
-#     packagesToPush: '
+#     packagesToPush: ''
 #     nuGetFeedType: 'external'
 #     publishFeedCredentials: 'nuget-curiosity-org'
 
@@ -166,4 +166,4 @@ steps:
     command: 'push'
     packagesToPush: '**/*.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: '8aa541d0-0c14-4dcb-85fb-97e9a6a03008''
+    publishVstsFeed: '8aa541d0-0c14-4dcb-85fb-97e9a6a03008'

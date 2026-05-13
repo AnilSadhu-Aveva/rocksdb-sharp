@@ -4,8 +4,6 @@ trigger:
 pool:
   vmImage: 'ubuntu-22.04'
 
-container: curiosityai/rocksdb-build-linux:latest
-
 steps:
 
 - task: Bash@3
@@ -24,9 +22,16 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'ls $(Build.SourcesDirectory) -hR'
-  
-- task: AzureCLI@1
+- task: UniversalPackages@1
   inputs:
-    azureSubscription: 'Curiosity GmbH Azure'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az storage blob upload -f $(Build.SourcesDirectory)/build-native/runtimes/linux-x64/native/librocksdb.so --account-name curiosityreleases  -c rocksdb  -n librocksdb-v$(ROCKSDBVERSION).so  --overwrite true'
+    command: 'publish'
+    feed: 'Cloud-Platform'
+    packageName: 'rocksdb-native-linux-X64'
+    packageVersion: '$(ROCKSDBVERSION)'
+    directory: '$(Build.SourcesDirectory)/build-native/runtimes/linux-x64/native'
+
+# - task: AzureCLI@1
+#   inputs:
+#     azureSubscription: 'Curiosity GmbH Azure'
+#     scriptLocation: 'inlineScript'
+#     inlineScript: 'az storage blob upload -f $(Build.SourcesDirectory)/build-native/runtimes/linux-x64/native/librocksdb.so --account-name curiosityreleases  -c rocksdb  -n librocksdb-v$(ROCKSDBVERSION).so  --overwrite true'
